@@ -1,0 +1,33 @@
+ <div>Amount of birds: {{amount}}</div>
+
+ <div class = "container">
+ 	<div class = "row">
+		<div class = "col-sm-3" *ngFor="let bird of birds">
+			<div id="birds-listing" class = "card">
+				<div class = "faces front" [ngClass]="flipToBack(bird)">
+					<p>{{bird.data.name}}</p>
+					<h4>Gender: {{bird.data.gender}}</h4>
+					<h4>Father: {{bird.data.father}}</h4>
+					<h4>Mother: {{bird.data.mother}}</h4>
+					<h4>Date born: {{bird.data.dateBorn}} </h4>
+					<button (click)="showBack(bird)" class = "flip flipButtonFront"></button>
+				</div>
+				<div class = "faces back" [ngClass]="flipToFront(bird)">
+				<p>{{bird.data.name}}</p>
+				<h4>Face: {{bird.data.face}}</h4>
+				<h4>Back:  {{bird.data.back}}</h4>
+				<h4>Breast: {{bird.data.breast}} </h4>
+				<h4>Blue: {{bird.data.blueBack}}</h4>
+				<h4>Orange:  {{bird.data.orangeFace}}</h4>
+				<button (click)="showFront(bird)" class = "flip flipButtonBack"></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+

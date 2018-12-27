@@ -1,0 +1,5 @@
+<form class="add-bird" name="add-bird">
+	<input type="text" name = "name" [(ngModel)]="name"/>
+	<input type="text" name = "color" [(ngModel)]="color"/>
+	<button (click)="fbPostData(name, color)">Add bird</button>
+</form>
