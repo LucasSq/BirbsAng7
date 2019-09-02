@@ -15,6 +15,6 @@ export class BirdAdderComponent implements OnInit {
     firebase
       .database()
       .ref('/birds')
-      .set({ [name]: { color: color } });
+      .set({ [name]: { name: name, color: color } });
   }
 }
