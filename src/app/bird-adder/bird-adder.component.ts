@@ -7,14 +7,14 @@ declare var firebase: any;
   styleUrls: ['./bird-adder.component.css']
 })
 export class BirdAdderComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
+  fbPostData(name, color) {
+    firebase
+      .database()
+      .ref('/birds')
+      .set({ [name]: { color: color } });
   }
-
-	fbPostData(name, color){
-		firebase.database().ref('/birds').push({name: name, color: color})
-	}
-
 }
